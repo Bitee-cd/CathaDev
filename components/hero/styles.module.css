@@ -1,0 +1,47 @@
+
+.HeroSection{
+    height: 100%;
+    /* width: 100vw; */
+    /* overflow: hidden; */
+    /* display: flex; */
+    align-items: center;
+    
+    /* max-width: 1540px; */
+   
+}
+.HeroSection_image_section{
+    
+    
+    
+    align-items: flex-end;
+    height: 100%;
+    /* background: red; */
+    width: 96%;
+}
+.HeroSection_image{
+    z-index: 1;
+}
+
+.HeroSection_text_section{
+    /* position: absolute; */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    
+    height: 100%;
+}
+.HeroSection_text{
+    /* z-index: 2; */
+    font-size: 80px;
+    font-weight: bold;
+
+}
+
+.HeroSection_float_section{
+    position: absolute;
+    z-index: 3;
+
+}

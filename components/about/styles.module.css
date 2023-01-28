@@ -1,0 +1,13 @@
+
+
+.sphere{
+    width:357px;
+    height:357px;
+    top:260px;
+    left: 338px;
+    border-radius: 50%;
+    
+    background: linear-gradient(rgba(12, 12, 12, 0.5), rgba(227, 227, 227, 0.14));
+    fill: linear gradient#0C0C0C @ 0%;
+    
+}
