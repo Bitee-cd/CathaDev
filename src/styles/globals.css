@@ -9,7 +9,36 @@
 }
 
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  padding: 0;
+  margin: 0;
 }
+/* General Styling*/
+.screen-center {
+  @apply container mx-auto w-[90%];
+}
+.zindex_1 {
+  z-index: -1;
+}
+.zindex2 {
+  z-index: 2;
+}
+.zindex3 {
+  z-index: 2;
+}
+.squada_text {
+  font-family: var(--squada);
+}
+/* General Styling*/
+
+/*toggle switch*/
+
+/*toggle switch*/
