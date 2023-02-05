@@ -5,12 +5,23 @@ import { useAppContext } from "../Context/AppContext";
 const Button = ({ title }) => {
   const [push, setPush] = useState(false);
   const { darkMode } = useAppContext();
+  const [hover, setHover] = useState(true);
+
   return (
     <motion.div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       animate={{ duration: 2 }}
-      className={` flex items-center  rounded-[32px] hover:cursor-pointer`}
+      whileHover={{ duration: 1 }}
+      className={` flex ${
+        hover && "flex-row-reverse bg-pri dark:bg-black"
+      } items-center relative h-[32px] transition-all  duration-700 rounded-[32px]  hover:cursor-pointer`}
     >
-      <div className="rounded-full w-8 h-8 dark:bg-pri bg-black flex justify-center items-center">
+      <div
+        className={`rounded-full w-8 h-8  ${
+          hover && "right-[-20px] "
+        }    dark:bg-pri bg-black transition-all  duration-700 ease-in-out flex justify-center items-center`}
+      >
         <svg
           width="8"
           height="16"
@@ -31,7 +42,13 @@ const Button = ({ title }) => {
           )}
         </svg>
       </div>
-      <span className="px-2 text-center">{title}</span>
+      <span
+        className={`${
+          hover && "dark:text-pri dark:text-pri"
+        } px-2  text-center`}
+      >
+        {title}
+      </span>
     </motion.div>
   );
 };

@@ -22,6 +22,11 @@ div {
   margin: 0;
 }
 /* General Styling*/
+/*fonts*/
+.big-text {
+  font-size: clamp(3.75rem, 5vw + 3.2rem, 8rem);
+}
+/*fonts*/
 .screen-center {
   @apply container mx-auto w-[90%];
 }
@@ -32,13 +37,35 @@ div {
   z-index: 2;
 }
 .zindex3 {
-  z-index: 2;
+  z-index: 3;
 }
 .squada_text {
   font-family: var(--squada);
 }
 /* General Styling*/
-
+.circle {
+  width: clamp(7.813rem, 8vw + 6rem, 14.625rem);
+  height: clamp(7.813rem, 8vw + 6rem, 14.625rem);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0.7;
+  z-index: 3;
+}
+.circle::before {
+  content: "";
+  margin: -35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(20px);
+  z-index: 5;
+  opacity: 1;
+}
 /*toggle switch*/
 
 /*toggle switch*/
