@@ -1,28 +1,34 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
+import { useAppContext } from "../Context/AppContext";
 
 function AboutUs() {
+  const { squada } = useAppContext();
   return (
-    <div className={`screen-center my-20 relative`}>
-      <div className={`${styles.sphere} z-1 absolute`}></div>
-      <div className="z-2 bg-transparent">
-        <h2 className="text-fontSize3 font-semibold">ABOUT US</h2>
+    <div className={` screen-center my-20 relative`}>
+      <div
+        className={`${styles.sphere} absolute text-black dark:text-pri`}
+      ></div>
+      <div className="z-2 zindex1">
+        <h4 className=" font-semibold">ABOUT US</h4>
 
         <div>
-          <h2 className="text-fontSize1">What Will You Benefit?</h2>
-          <p className="text-fontSize3 w-2/3">
+          <h1 className={`${squada.className}  w-[70%] `}>
+            What Will You Benefit?
+          </h1>
+          <p className=" w-[80%] ">
             We specialize in helping businesses navigate the ever-changing
             digital landscape and reach their target audience through a variety
             of channels so with Cathadev you get;
           </p>
-          <div className="flex">
-            <div className="flex-1">
-              <p className="text-fontSize3 mt-2">
+          <div className="md:flex justify-between border border-red-600">
+            <div className="md:w-[65%]">
+              <p className=" mt-2">
                 Digital masterpieces that captivate and convert, Online presence
                 elevated to new heights, Visually stunning websites that drive
                 results and Innovative designs for the modern web.
               </p>
-              <div className="mt-5 flex items-center">
+              {/* <div className="w-1/2">
                 <div className="rounded-full w-5 h-5 bg-black flex justify-center">
                   <Image
                     alt=""
@@ -32,7 +38,7 @@ function AboutUs() {
                   />
                 </div>
                 <span className="px-2 text-center">Contact us</span>
-              </div>
+              </div> */}
 
               {/* <div className=''>
                 <div className=' bg-black h-1 mt-8 w-6'>
@@ -42,12 +48,17 @@ function AboutUs() {
                 <hr />
             </div> */}
             </div>
-            <div className="flex-2">
+            <div className="md:w-1/3 bg-red-600 z-20">
               <Image
                 alt=""
                 src={"/images/image10.png"}
-                width={300}
-                height={200}
+                width={700}
+                height={475}
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </div>
           </div>

@@ -23,8 +23,19 @@ div {
 }
 /* General Styling*/
 /*fonts*/
-.big-text {
+h1 {
   font-size: clamp(3.75rem, 5vw + 3.2rem, 8rem);
+  @apply leading-none;
+  /* font-size:clamp(3.125rem, 7vw + 2.5rem, 7.5rem); */
+}
+h4 {
+  font-size: clamp(1.125rem, 0.5vw + 1rem, 1.563rem);
+}
+p {
+  font-size: clamp(0.938rem, 1vw + 0.9rem, 1.875rem);
+}
+.p-tiny-text {
+  font-size: clamp(0.7rem, 0.5vw + 0.8rem, 1rem);
 }
 /*fonts*/
 .screen-center {
@@ -32,6 +43,9 @@ div {
 }
 .zindex_1 {
   z-index: -1;
+}
+.zindex1 {
+  z-index: 1;
 }
 .zindex2 {
   z-index: 2;
@@ -53,7 +67,9 @@ div {
   position: absolute;
   opacity: 0.7;
   z-index: 3;
+  @apply bg-pri dark:bg-black border-[2px] border-black dark:border-pri;
 }
+
 .circle::before {
   content: "";
   margin: -35px;

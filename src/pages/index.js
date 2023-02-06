@@ -24,9 +24,7 @@ export default function Home() {
       </Head>
 
       <>
-        <main
-          className={`${spartan.className} bg-pri text-sec dark:bg-sec dark:text-pri`}
-        >
+        <main className={`${spartan.className}`}>
           <Navbar />
           <HeroSection />
           <AboutUs />

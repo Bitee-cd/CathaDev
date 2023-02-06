@@ -27,7 +27,7 @@ export default function HeroSection() {
           >
             Establishing Your Online Presence With Perfection
           </h1>
-          <p className="text-[25px] mt-3 md:w-[80%] mb-10">
+          <p className=" mt-3 md:w-[80%] mb-10">
             At CathaDev, we will create a wonderful digital experience for your
             business as we work together to enhance your online presence through
             quality responsive websites that will improve user experience, boost
@@ -39,32 +39,32 @@ export default function HeroSection() {
           <Button title="Contact Us" />
         </div>
         <div className="circle top-1/3 left-[10%] bg-pri dark:bg-black border-[2px] border-black dark:border-pri">
-          <p className="uppercase text-black text-center dark:text-pri m-5">
+          <p className="uppercase p-tiny-text text-black text-center dark:text-pri m-5">
             Web <br></br>development
           </p>
         </div>
         <div className="circle left-1/3 top-[10%] bg-pri dark:bg-black border-[2px] border-black dark:border-pri">
-          <p className="uppercase text-black text-center dark:text-pri m-5">
+          <p className="uppercase p-tiny-text text-black text-center dark:text-pri m-5">
             Mobile <br></br>development
           </p>
         </div>
-        <div className="circle top-[0] right-[10%] bg-pri dark:bg-black border-[2px] border-black dark:border-pri">
-          <p className="uppercase text-black text-center dark:text-pri m-5">
+        <div className="circle top-[0] right-[10%]">
+          <p className="uppercase p-tiny-text text-black text-center dark:text-pri m-5">
             User Eperience <br></br>design
           </p>
         </div>
-        <div className="circle top-1/2 left-[50%] bg-pri dark:bg-black border-[2px] border-black dark:border-pri">
-          <p className="uppercase text-black text-center dark:text-pri m-5">
+        <div className="circle top-1/2 left-[50%]">
+          <p className="uppercase p-tiny-text text-black text-center dark:text-pri m-5">
             User Interface <br></br>design
           </p>
         </div>
-        <div className="circle bottom-[0] left-[30%] bg-pri dark:bg-black border-[2px] border-black dark:border-pri">
-          <p className="uppercase text-black text-center dark:text-pri m-5">
+        <div className="circle bottom-[0] left-[30%]">
+          <p className="uppercase p-tiny-text text-black text-center dark:text-pri m-5">
             Custom Web <br></br>design
           </p>
         </div>
-        <div className="circle bottom-[0] right-[5%] bg-pri dark:bg-black border-[2px] border-black dark:border-pri">
-          <p className="uppercase text-black text-center dark:text-pri m-5">
+        <div className="circle bottom-[0] right-[5%]">
+          <p className="uppercase p-tiny-text text-black text-center dark:text-pri m-5">
             Graphic <br></br>design
           </p>
         </div>

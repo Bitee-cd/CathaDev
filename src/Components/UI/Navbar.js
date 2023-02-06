@@ -24,7 +24,7 @@ function Navbar() {
           <Link href="/">
             <div className="flex items-center gap-2">
               {!darkMode ? <LogoLight /> : <LogoDark />}
-              <span class={`${squada.className} font-bold text-[40px]`}>
+              <span className={`${squada.className} font-bold text-[40px]`}>
                 CathaDev
               </span>
             </div>
