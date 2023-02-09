@@ -28,6 +28,9 @@ h1 {
   @apply leading-none;
   /* font-size:clamp(3.125rem, 7vw + 2.5rem, 7.5rem); */
 }
+h2 {
+  font-size: clamp(2rem, 4vw + 1rem, 4.063rem);
+}
 h4 {
   font-size: clamp(1.125rem, 0.5vw + 1rem, 1.563rem);
 }

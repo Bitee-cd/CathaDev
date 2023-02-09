@@ -7,7 +7,7 @@ export default function HeroSection() {
   const { squada } = useAppContext();
   return (
     <section
-      className={` min-h-screen overflow-hidden  mx-auto flex items-center relative`}
+      className={` min-h-screen 2xl:min-h-[50vh] overflow-hidden  mx-auto flex items-center relative`}
     >
       <div
         className={`zindex1 w-[50%] mt-20 top-1/2 -translate-y-1/2 right-0 absolute  `}
