@@ -6,8 +6,8 @@ export const about = {
     { id: 4, text: "Innovative designs for the modern web" },
   ],
   benefits: [
-    { id: 1, text: "HIGH QUALITY WEBSITES" },
-    { id: 2, text: "AFFORDABLE RATES" },
-    { id: 3, text: " PAGE ONE OF GOOGLE" },
+    { id: 1, text: "HIGH QUALITY WEBSITES", image: "/images/about/abouta.png" },
+    { id: 2, text: "AFFORDABLE RATES", image: "/images/about/aboutb.png" },
+    { id: 3, text: " PAGE ONE OF GOOGLE", image: "/images/about/aboutc.png" },
   ],
 };

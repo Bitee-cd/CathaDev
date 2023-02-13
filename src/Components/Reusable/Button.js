@@ -14,7 +14,7 @@ const Button = ({ title }) => {
       animate={{ duration: 2 }}
       whileHover={{ duration: 1 }}
       className={` flex ${
-        hover && "flex-row-reverse bg-pri dark:bg-black"
+        hover && " bg-pri dark:bg-black"
       } items-center relative h-[32px] transition-all  duration-700 rounded-[32px]  hover:cursor-pointer`}
     >
       <div

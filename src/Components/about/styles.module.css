@@ -9,3 +9,9 @@
   background: linear-gradient(rgba(227, 227, 227, 0.14), rgba(12, 12, 12, 0.5));
   fill: linear gradient#0C0C0C @0%;
 }
+@media only screen and (max-width: 668px) {
+  .screen {
+    width: 150px;
+    height: 150px;
+  }
+}
