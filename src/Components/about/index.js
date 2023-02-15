@@ -1,35 +1,21 @@
 import Image from "next/image";
-import styles from "./styles.module.css";
 import { useAppContext } from "../Context/AppContext";
 import SingleItem from "./SingleItem";
 import { about } from "@/utils/data";
 import Benefits from "./Benefits";
 import image from "../../../public/images/about_main.png";
-import lines from "../../../public/images/about/line.png";
-import line_dark from "../../../public/images/about/line_dark.png";
+import BackGroundLines from "../Reusable/BackGroundLines";
 
 function AboutUs() {
   const { squada } = useAppContext();
   const { what_you_get, benefits } = about;
   return (
     <div className="relative">
-      <Image
-        alt=" trusted hands holding website"
-        placeholder="blur"
-        priority
-        src={lines}
-        sizes="100vw"
-        style={{
-          width: "100vw",
-          height: "auto",
-        }}
-        className="w-screen absolute top-1/3 right-1/2 translate-x-1/2 -z-0"
+      <BackGroundLines
+        position="left-1/2 -translate-x-1/2"
+        top="top-1/2 -translate-y-1/2"
       />
       <div className={` screen-center my-20 relative`}>
-        <div
-          className={`${styles.sphere} absolute text-black dark:text-pri`}
-        ></div>
-
         <div className="z-2 zindex1">
           <h4 className=" font-semibold">ABOUT US</h4>
 

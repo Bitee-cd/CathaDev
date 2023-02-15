@@ -6,11 +6,16 @@ import Image from "next/image";
 const Benefits = ({ item }) => {
   const { squada } = useAppContext();
   return (
-    <div className="border-b-[3px] border-sec dark:border-pri">
-      <div className="flex justify-between items-center py-2 ">
+    <div className="border-b-[3px] border-sec dark:border-pri py-2">
+      <div className="flex justify-between items-center  ">
         <h2 className={`${squada.className} `}>{item.text}</h2>
         <div className="-rotate-45">
-          <AiOutlineArrowRight size="60" />
+          <div className="hidden md:block">
+            <AiOutlineArrowRight size="60" />
+          </div>
+          <div className="md:hidden block">
+            <AiOutlineArrowRight size="30" />
+          </div>
         </div>
       </div>
       <div className="md:hidden">

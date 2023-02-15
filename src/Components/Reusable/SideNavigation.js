@@ -16,7 +16,7 @@ const SideNavigation = ({ showNav, setShowNav }) => {
       animate={{ x: 0, opacity: 1 }}
       className={` absolute right-0 h-screen w-screen z-10 bg-pri`}
     >
-      <div className="w-[50%] ml-auto bg-sec text-pri h-full border p-5">
+      <div className="w-[70%] md:w-[50%] ml-auto bg-sec text-pri h-full border p-5">
         <div className="flex justify-end">
           <button
             onClick={() => setShowNav(false)}

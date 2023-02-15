@@ -1,0 +1,12 @@
+.background {
+  background: linear-gradient(
+    259.93deg,
+    #e3e3e3 1.32%,
+    rgba(12, 12, 12, 0.78) 113.59%
+  );
+  background-transform: rotate(180deg);
+  /* transform: rotate(180deg); */
+}
+.clip {
+  clip-path: polygon(40% 0, 100% 0%, 60% 100%, 0% 100%);
+}

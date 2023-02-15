@@ -3,8 +3,11 @@ import { Squada_One } from "@next/font/google";
 import HeroSection from "@/Components/Hero";
 import Navbar from "@/Components/UI/Navbar";
 import AboutUs from "@/Components/about";
-import { useState } from "react";
 import { useAppContext } from "@/Components/Context/AppContext";
+import WhoWeAre from "@/Components/who_we_are";
+import Services from "@/Components/services";
+import EnoughSaid from "@/Components/EnoughSaid/EnoughSaid";
+import Portfolio from "@/Components/Portfolio/Portfolio";
 
 const squada = Squada_One({
   subsets: ["latin"],
@@ -28,6 +31,10 @@ export default function Home() {
           <Navbar />
           <HeroSection />
           <AboutUs />
+          <WhoWeAre />
+          <Services />
+          <EnoughSaid />
+          <Portfolio />
         </main>
       </>
     </>
