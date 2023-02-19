@@ -19,6 +19,7 @@ h5,
 h6,
 div {
   padding: 0;
+  /* cursor: none; */
   margin: 0;
 }
 /* General Styling*/

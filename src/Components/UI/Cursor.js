@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CursorArrow from "./CursorArrow";
+import { motion } from "framer-motion";
 
 const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 400, y: 400 });
@@ -16,15 +17,18 @@ const Cursor = () => {
     };
   }, []);
   return (
-    <div
+    <motion.div
+      initial={{ x: 20 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5 }}
       className="cursor border-sec dark:border-pri border pointer-events-none flex justify-center items-center  h-[30px] w-[30px] fixed z-20 rounded-full"
       style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}
     >
-      <div className="bg-sec dark:bg-pri w-[11px] h-[11px] rounded-full"></div>
-      <div className="absolute  top-1/2 translate-y-1/2 right-[-7px]">
+      <motion.div className="bg-sec dark:bg-pri w-[11px] h-[11px] rounded-full"></motion.div>
+      <div className="absolute  top-[18px] right-[-5px]">
         <CursorArrow />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
