@@ -12,6 +12,7 @@ import Testimonials from "@/Components/Testimonials/Testimonials";
 import Contact from "@/Components/GetInTouch/Contact";
 import ScrollButton from "@/Components/UI/ScrollButton";
 import Footer from "@/Components/UI/Footer";
+import Cursor from "@/Components/UI/Cursor";
 
 const squada = Squada_One({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function Home() {
           <Contact squada={squada} darkMode={darkMode} spartan={spartan} />
           <ScrollButton />
           <Footer />
+          <Cursor />
         </main>
       </>
     </>
