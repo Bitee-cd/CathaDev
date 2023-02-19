@@ -19,11 +19,11 @@ const BackGroundLines = ({ position, top }) => {
           width: "100vw",
           height: "auto",
         }}
-        className=" w-screen -translate-y-1/2 -z-0"
+        className=" w-screen -translate-y-1/2 zindex_1"
       />
 
       <div
-        className={`${styles.sphere} ${position}  absolute top-0 -translate-y-1/2 text-black dark:text-pri`}
+        className={`${styles.sphere} ${position}  -z-0  absolute top-0 -translate-y-1/2 text-black dark:text-pri`}
       ></div>
     </div>
   );

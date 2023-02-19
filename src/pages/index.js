@@ -8,6 +8,10 @@ import WhoWeAre from "@/Components/who_we_are";
 import Services from "@/Components/services";
 import EnoughSaid from "@/Components/EnoughSaid/EnoughSaid";
 import Portfolio from "@/Components/Portfolio/Portfolio";
+import Testimonials from "@/Components/Testimonials/Testimonials";
+import Contact from "@/Components/GetInTouch/Contact";
+import ScrollButton from "@/Components/UI/ScrollButton";
+import Footer from "@/Components/UI/Footer";
 
 const squada = Squada_One({
   subsets: ["latin"],
@@ -16,7 +20,7 @@ const squada = Squada_One({
 });
 
 export default function Home() {
-  const { spartan } = useAppContext();
+  const { spartan, squada, darkMode } = useAppContext();
   return (
     <>
       <Head>
@@ -35,6 +39,10 @@ export default function Home() {
           <Services />
           <EnoughSaid />
           <Portfolio />
+          <Testimonials />
+          <Contact squada={squada} darkMode={darkMode} spartan={spartan} />
+          <ScrollButton />
+          <Footer />
         </main>
       </>
     </>

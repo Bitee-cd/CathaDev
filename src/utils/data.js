@@ -63,3 +63,56 @@ export const services = {
     },
   ],
 };
+export const portfolio = {
+  image_slider: [
+    {
+      id: 1,
+      src: "/images/about_main.png",
+      alt: "Portfolio Image",
+    },
+    {
+      id: 2,
+      src: "/images/hero-image.png",
+      alt: "Portfolio Image",
+    },
+    {
+      id: 3,
+      src: "/images/portfolio/slider.png",
+      alt: "Portfolio Image",
+    },
+  ],
+};
+export const footer = {
+  links: [
+    {
+      id: 1,
+      text: "Home",
+      link: "/",
+    },
+    {
+      id: 2,
+      text: "About",
+      link: "about",
+    },
+    {
+      id: 3,
+      text: "Services",
+      link: "services",
+    },
+    {
+      id: 4,
+      text: "Portfolio",
+      link: "portfolio",
+    },
+    {
+      id: 5,
+      text: "Testimonials",
+      link: "testimonials",
+    },
+    {
+      id: 6,
+      text: "Contact Us",
+      link: "contact-us",
+    },
+  ],
+};

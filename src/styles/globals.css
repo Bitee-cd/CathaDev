@@ -40,6 +40,9 @@ h4 {
 p {
   font-size: clamp(0.938rem, 1vw + 0.9rem, 1.875rem);
 }
+.p-text {
+  font-size: clamp(0.938rem, 1vw + 0.9rem, 1.875rem);
+}
 .p-tiny-text {
   font-size: clamp(0.7rem, 0.5vw + 0.8rem, 1rem);
 }
@@ -49,12 +52,19 @@ h6 {
 .h2 {
   font-size: clamp(0.938rem, 3vw + 0.5rem, 3.125rem);
 }
+.label-text {
+  font-size: clamp(0.75rem, 0.5vw + 0.5rem, 1.25rem);
+  font-weight: 600;
+}
 /*fonts*/
 .screen-center {
   @apply container mx-auto w-[90%];
 }
 .zindex_1 {
   z-index: -1;
+}
+.zindex_2 {
+  z-index: -2;
 }
 .zindex1 {
   z-index: 1;
@@ -79,9 +89,17 @@ h6 {
   position: absolute;
   opacity: 0.7;
   z-index: 3;
-  @apply bg-pri dark:bg-black border-[2px] border-black dark:border-pri;
+  @apply bg-pri dark:bg-black border-[2px]  border-black dark:border-pri;
 }
-
+.submit_btn {
+  width: clamp(7.813rem, 8vw + 6rem, 14.625rem);
+  height: clamp(7.813rem, 8vw + 6rem, 14.625rem);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @apply hover:bg-pri hover:dark:bg-black border-[2px]  border-black dark:border-pri;
+}
 .circle::before {
   content: "";
   margin: -35px;
@@ -94,6 +112,30 @@ h6 {
   z-index: 5;
   opacity: 1;
 }
-/*toggle switch*/
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 0.7;
+  font-weight: 300;
+}
 
-/*toggle switch*/
+.input,
+textarea {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -khtml-border-radius: 0;
+  -webkit-appearance: none;
+  color: inherit;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+  @apply bg-sec text-pri dark:bg-pri dark:text-sec;
+}
+.input {
+  @apply w-full  h-[30px] lg:h-[50px] p-text font-[500] border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
+}
+.input2 {
+  @apply w-full h-full p-text font-[600] border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
+}
