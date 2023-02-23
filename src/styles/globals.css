@@ -140,3 +140,6 @@ input:focus {
 .input2 {
   @apply w-full h-full p-text font-[600] border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
 }
+.hamburger {
+  @apply w-6 origin-center h-1 mt-1 rounded bg-sec transition duration-500;
+}

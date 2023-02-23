@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import LogoLight from "../Reusable/LogoLight";
-import LogoDark from "../Reusable/LogoDark";
 import Links from "./Links";
 import { footer } from "@/utils/data";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useAppContext } from "../Context/AppContext";
+import LogoMobile from "../Reusable/LogoMobile";
+import Logo from "../Reusable/LogoLight";
 
 const Footer = () => {
   const { links } = footer;
@@ -15,11 +15,11 @@ const Footer = () => {
       <div>
         <Link href="/">
           <div className="flex items-center gap-2">
-            <div className="dark:block hidden">
-              <LogoLight />
+            <div className=" md:hidden">
+              <LogoMobile />
             </div>
-            <div className="dark:hidden ">
-              <LogoDark />
+            <div className="hidden md:block">
+              <Logo />
             </div>
           </div>
         </Link>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import CursorArrow from "./CursorArrow";
 import { motion } from "framer-motion";
-
+import { useAppContext } from "../Context/AppContext";
+const transition = { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9] };
 const Cursor = () => {
+  const { mouseHovered } = useAppContext();
   const [mousePosition, setMousePosition] = useState({ x: 400, y: 400 });
   const onMouseMove = (event) => {
     const { clientX, clientY } = event;
@@ -20,8 +22,10 @@ const Cursor = () => {
     <motion.div
       initial={{ x: 20 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="cursor border-sec dark:border-pri border pointer-events-none flex justify-center items-center  h-[30px] w-[30px] fixed z-20 rounded-full"
+      transition={transition}
+      className={`${
+        mouseHovered && "scale-150"
+      }cursor border-sec dark:border-pri border pointer-events-none flex justify-center items-center h-[30px] w-[30px]  fixed z-20 rounded-full`}
       style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}
     >
       <motion.div className="bg-sec dark:bg-pri w-[11px] h-[11px] rounded-full"></motion.div>

@@ -1,43 +1,42 @@
-import Image from "next/image";
-import Link from "next/link";
-import LogoDark from "../Reusable/LogoDark";
-import Button from "../Reusable/Button";
 import { useState } from "react";
+import Link from "next/link";
+import Button from "../Reusable/Button";
 import ToggleSwitch from "../Reusable/ToggleSwitch";
 import SideNavigation from "../Reusable/SideNavigation";
 import { AnimatePresence } from "framer-motion";
-import LogoLight from "../Reusable/LogoLight";
-import { useAppContext } from "../Context/AppContext";
 import { Squada_One } from "@next/font/google";
 import styles from "./../../styles/Home.module.css";
+import Logo from "../Reusable/LogoLight";
+import LogoMobile from "../Reusable/LogoMobile";
 const squada = Squada_One({
   subsets: ["latin"],
   weight: ["400"],
 });
+
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
-  const { darkMode } = useAppContext();
   return (
     <div className="relative">
-      <navbar className="screen-center flex justify-between ">
-        <div className="pb-5 pt-2">
+      <navbar className="screen-center flex justify-between pt-5 items-center ">
+        <div className="">
           <Link href="/">
             <div className="flex items-center gap-2">
-              <div className="dark:block hidden">
-                <LogoLight />
+              <div className="md:hidden">
+                <LogoMobile />
               </div>
-              <div className="dark:hidden ">
-                <LogoDark />
+              <div className="hidden md:block">
+                <Logo />
               </div>
-
-              <span className={`${squada.className} font-bold text-[40px]`}>
+              <span
+                className={`${squada.className} font-bold text-2xl md:text-[40px]`}
+              >
                 CathaDev
               </span>
             </div>
           </Link>
         </div>
 
-        <div className="flex items-center md:gap-10">
+        <div className="md:flex items-center md:gap-10 hidden ">
           <Button title="Contact Us" />
           <button
             onClick={() => setShowNav(true)}
@@ -47,12 +46,32 @@ function Navbar() {
           </button>
           <ToggleSwitch />
         </div>
-        <AnimatePresence>
-          {showNav && (
-            <SideNavigation showNav={showNav} setShowNav={setShowNav} />
-          )}
-        </AnimatePresence>
+        <div
+          onClick={() => {
+            setShowNav(!showNav);
+          }}
+          className={` relative w-6 items-center md:hidden `}
+        >
+          <div
+            className={`inset-0 m-auto hamburger ${
+              showNav && "absolute rotate-45"
+            }`}
+          ></div>
+          <div
+            className={`inset-0 mt-1 hamburger ${
+              showNav && "absolute -rotate-45 mt-0"
+            } `}
+          ></div>
+          <div
+            className={`mt-1 hamburger ${showNav ? " opacity-0 mt-0" : " "}`}
+          ></div>
+        </div>
       </navbar>
+      <AnimatePresence>
+        {showNav && (
+          <SideNavigation showNav={showNav} setShowNav={setShowNav} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

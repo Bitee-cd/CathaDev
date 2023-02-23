@@ -43,9 +43,7 @@ const Button = ({ title }) => {
         </svg>
       </div>
       <span
-        className={`${
-          hover && "dark:text-pri dark:text-pri"
-        } px-2  text-center`}
+        className={`${hover && "dark:text-pri text-sec"} px-2  text-center`}
       >
         {title}
       </span>

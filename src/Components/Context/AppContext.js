@@ -14,8 +14,18 @@ const spartan = League_Spartan({
 });
 export const AppContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
+  const [mouseHovered, setMouseHovered] = useState(false);
   return (
-    <Context.Provider value={{ darkMode, setDarkMode, squada, spartan }}>
+    <Context.Provider
+      value={{
+        darkMode,
+        setDarkMode,
+        squada,
+        spartan,
+        mouseHovered,
+        setMouseHovered,
+      }}
+    >
       {children}
     </Context.Provider>
   );

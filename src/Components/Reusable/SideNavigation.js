@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiArrowLeft } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { useAppContext } from "../Context/AppContext";
 import { useRouter } from "next/router";
+import { navbar } from "@/utils/data";
 
 const SideNavigation = ({ showNav, setShowNav }) => {
   const { squada } = useAppContext();
-  const { route } = useRouter();
+  const { side_nav } = navbar;
+  const [active, setActive] = useState(false);
   return (
     <motion.div
       key={showNav}
@@ -14,9 +16,9 @@ const SideNavigation = ({ showNav, setShowNav }) => {
       initial={{ x: 500, opacity: 0 }}
       transition={{ duration: 0.7 }}
       animate={{ x: 0, opacity: 1 }}
-      className={` absolute right-0 h-screen w-screen z-10 bg-pri`}
+      className={` absolute top-0 right-0 h-screen w-screen z-10 bg-pri`}
     >
-      <div className="w-[70%] md:w-[50%] ml-auto bg-sec text-pri h-full border p-5">
+      <div className="w-full md:w-[50%] ml-auto bg-sec text-pri h-full border p-5">
         <div className="flex justify-end">
           <button
             onClick={() => setShowNav(false)}
@@ -26,34 +28,13 @@ const SideNavigation = ({ showNav, setShowNav }) => {
           </button>
         </div>
         <div className={`${squada.className} flex flex-col text-[50px]`}>
-          <a href="#" className="">
-            <div className="border-b-[2px] border-white inline-block">Home</div>
-          </a>
-          <a href="#" className="">
-            <div className="hover:border-b-[2px] border-white inline-block">
-              About Us
-            </div>
-          </a>
-          <a href="#" className="">
-            <div className="hover:border-b-[2px] border-white inline-block">
-              Services
-            </div>
-          </a>
-          <a href="#" className="">
-            <div className="hover:border-b-[2px] border-white inline-block">
-              Portfolio
-            </div>
-          </a>
-          <a href="#" className="">
-            <div className="hover:border-b-[2px] border-white inline-block">
-              Testimonials
-            </div>
-          </a>
-          <a href="#" className="">
-            <div className="hover:border-b-[2px] border-white inline-block">
-              Contact Us
-            </div>
-          </a>
+          {side_nav.map((item) => (
+            <a href="#" className="" key={item.id}>
+              <div className={`${active && "border-white"} inline-block`}>
+                {item.name}
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </motion.div>

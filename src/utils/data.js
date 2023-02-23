@@ -116,3 +116,37 @@ export const footer = {
     },
   ],
 };
+export const navbar = {
+  side_nav: [
+    {
+      id: 1,
+      link: "",
+      name: "Home",
+    },
+    {
+      id: 2,
+      link: "",
+      name: "About Us",
+    },
+    {
+      id: 3,
+      link: "",
+      name: "Services",
+    },
+    {
+      id: 4,
+      link: "",
+      name: "Portfolio",
+    },
+    {
+      id: 5,
+      link: "",
+      name: "Testimonials",
+    },
+    {
+      id: 6,
+      link: "",
+      name: "Contact Us",
+    },
+  ],
+};
