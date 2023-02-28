@@ -11,7 +11,7 @@ const Footer = () => {
   const { links } = footer;
   const { darkMode } = useAppContext();
   return (
-    <footer className="grid md:grid-cols-4 screen-center mt-20">
+    <footer className=" grid md:grid-cols-4 screen-center mt-20">
       <div>
         <Link href="/">
           <div className="flex items-center gap-2">

@@ -9,17 +9,21 @@ const Button = ({ title }) => {
 
   return (
     <motion.div
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onHoverStart={() => setHover(true)}
+      onHoverEnd={() => setHover(false)}
       animate={{ duration: 2 }}
-      whileHover={{ duration: 1 }}
-      className={` flex ${
-        hover && " bg-pri dark:bg-black"
-      } items-center relative h-[32px] transition-all  duration-700 rounded-[32px]  hover:cursor-pointer`}
+      whileHover={{
+        delay: 0.5,
+        duration: 1,
+        backgroundColor: `${darkMode ? "#0C0C0C" : "#E3E3E3"}`,
+      }}
+      style={{ originX: "left" }}
+      className={` flex ${""} items-center relative h-[32px] transition-all  duration-700 rounded-[32px]  hover:cursor-pointer`}
     >
-      <div
+      <motion.div
+        animation={{ duration: 1, x: `${hover && 120}` }}
         className={`rounded-full w-8 h-8  ${
-          hover && "right-[-20px] "
+          hover && "bg-red-500 "
         }    dark:bg-pri bg-black transition-all  duration-700 ease-in-out flex justify-center items-center`}
       >
         <svg
@@ -29,19 +33,12 @@ const Button = ({ title }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {!darkMode ? (
-            <path
-              d="M0.426086 0.888885L7.13913 8.547L0.426086 15.1111"
-              stroke="#0C0C0C"
-            />
-          ) : (
-            <path
-              d="M0.426086 0.888885L7.13913 8.547L0.426086 15.1111"
-              stroke="#E3E3E3"
-            />
-          )}
+          <path
+            d="M0.426086 0.888885L7.13913 8.547L0.426086 15.1111"
+            stroke={!darkMode ? "#0C0C0C" : "#E3E3E3"}
+          />
         </svg>
-      </div>
+      </motion.div>
       <span
         className={`${hover && "dark:text-pri text-sec"} px-2  text-center`}
       >

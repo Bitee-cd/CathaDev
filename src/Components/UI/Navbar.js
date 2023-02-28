@@ -8,6 +8,7 @@ import { Squada_One } from "@next/font/google";
 import styles from "./../../styles/Home.module.css";
 import Logo from "../Reusable/LogoLight";
 import LogoMobile from "../Reusable/LogoMobile";
+import { useAppContext } from "../Context/AppContext";
 const squada = Squada_One({
   subsets: ["latin"],
   weight: ["400"],
@@ -15,6 +16,7 @@ const squada = Squada_One({
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
+  const { setCursorVariant, textLeave, textEnter } = useAppContext();
   return (
     <div className="relative">
       <navbar className="screen-center flex justify-between pt-5 items-center ">
@@ -28,6 +30,8 @@ function Navbar() {
                 <Logo />
               </div>
               <span
+                onMouseEnter={textEnter}
+                onMouseLeave={textLeave}
                 className={`${squada.className} font-bold text-2xl md:text-[40px]`}
               >
                 CathaDev
@@ -39,8 +43,10 @@ function Navbar() {
         <div className="md:flex items-center md:gap-10 hidden ">
           <Button title="Contact Us" />
           <button
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
             onClick={() => setShowNav(true)}
-            className=" bg-black py-1 w-[100px]  rounded-[30px] dark:bg-pri text-pri dark:text-sec justify-center flex "
+            className=" bg-black py-1 w-[100px] hover:bg-pri hover:text-sec ease-in-out duration-500 rounded-[30px] dark:bg-pri text-pri dark:text-sec justify-center flex "
           >
             Menu
           </button>
@@ -50,20 +56,22 @@ function Navbar() {
           onClick={() => {
             setShowNav(!showNav);
           }}
-          className={` relative w-6 items-center md:hidden `}
+          className={` relative w-6 items-center md:hidden  `}
         >
           <div
-            className={`inset-0 m-auto hamburger ${
+            className={`inset-0 m-auto hamburger bg-sec dark:bg-pri ${
               showNav && "absolute rotate-45"
             }`}
           ></div>
           <div
-            className={`inset-0 mt-1 hamburger ${
+            className={`inset-0 mt-1 hamburger bg-sec dark:bg-pri ${
               showNav && "absolute -rotate-45 mt-0"
             } `}
           ></div>
           <div
-            className={`mt-1 hamburger ${showNav ? " opacity-0 mt-0" : " "}`}
+            className={`mt-1 hamburger bg-sec dark:bg-pri ${
+              showNav ? " opacity-0 mt-0" : " "
+            }`}
           ></div>
         </div>
       </navbar>

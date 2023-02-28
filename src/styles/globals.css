@@ -7,7 +7,26 @@
   padding: 0;
   margin: 0;
 }
+/* html {
+  background-color: #e3e3e3;
+}
 
+body {
+  background-color: #e3e3e3;
+} */
+
+/* .dark {
+  html {
+    background-color: #0c0c0c;
+  }
+
+  body {
+    background-color: #0c0c0c;
+  }
+} */
+.dark {
+  background-color: #0c0c0c;
+}
 html,
 body,
 p,
@@ -19,7 +38,7 @@ h5,
 h6,
 div {
   padding: 0;
-  /* cursor: none; */
+  cursor: none;
   margin: 0;
 }
 /* General Styling*/
@@ -83,14 +102,18 @@ h6 {
 .circle {
   width: clamp(7.813rem, 8vw + 6rem, 14.625rem);
   height: clamp(7.813rem, 8vw + 6rem, 14.625rem);
+  background: rgba(12, 12, 12, 0.54);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border: 1px solid rgba(12, 12, 12, 0.57);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  opacity: 0.7;
   z-index: 3;
-  @apply bg-pri dark:bg-black border-[2px]  border-black dark:border-pri;
+  @apply border-[2px] hover:bg-pri hover:border-[#FFFFFF] transition-all duration-100 hover:scale-125 dark:hover:bg-sec border-black dark:border-pri;
 }
 .submit_btn {
   width: clamp(7.813rem, 8vw + 6rem, 14.625rem);
@@ -101,18 +124,7 @@ h6 {
   align-items: center;
   @apply hover:bg-pri hover:dark:bg-black border-[2px]  border-black dark:border-pri;
 }
-.circle::before {
-  content: "";
-  margin: -35px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  filter: blur(20px);
-  z-index: 5;
-  opacity: 1;
-}
+
 input::placeholder,
 textarea::placeholder {
   color: inherit;
@@ -141,5 +153,27 @@ input:focus {
   @apply w-full h-full p-text font-[600] border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
 }
 .hamburger {
-  @apply w-6 origin-center h-1 mt-1 rounded bg-sec transition duration-500;
+  @apply w-6 origin-center h-1 mt-1 rounded  transition duration-500;
+}
+/* .cursor {
+  @apply border-sec dark:border-pri border pointer-events-none flex justify-center items-center h-[30px] w-[30px]  fixed z-20 rounded-full;
+} */
+.cursor {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+.blur {
+  /* From https://css.glass */
+  background: rgba(12, 12, 12, 0.54);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(12, 12, 12, 0.57);
 }

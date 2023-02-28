@@ -13,7 +13,7 @@ import Contact from "@/Components/GetInTouch/Contact";
 import ScrollButton from "@/Components/UI/ScrollButton";
 import Footer from "@/Components/UI/Footer";
 import Cursor from "@/Components/UI/Cursor";
-
+import { useTheme } from "next-themes";
 const squada = Squada_One({
   subsets: ["latin"],
   weight: ["400"],

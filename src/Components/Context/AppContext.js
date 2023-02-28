@@ -15,6 +15,9 @@ const spartan = League_Spartan({
 export const AppContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [mouseHovered, setMouseHovered] = useState(false);
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <Context.Provider
       value={{
@@ -24,6 +27,10 @@ export const AppContext = ({ children }) => {
         spartan,
         mouseHovered,
         setMouseHovered,
+        cursorVariant,
+        setCursorVariant,
+        textEnter,
+        textLeave,
       }}
     >
       {children}
