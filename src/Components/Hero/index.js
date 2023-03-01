@@ -41,7 +41,7 @@ export default function HeroSection() {
           <Button title="Contact Us" />
         </div>
 
-        <div className="circle  lg:top-[10%] top-0 left-[5%] ">
+        <div className="circle  lg:top-[10%] top-0 left-[0] ">
           <Paragraph text1="Web" text2="Development" />
         </div>
         <div className="circle lg:left-1/3 top-[-7%] right-0 ">

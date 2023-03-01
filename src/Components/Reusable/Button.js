@@ -23,7 +23,7 @@ const Button = ({ title }) => {
       <motion.div
         animation={{ duration: 1, x: `${hover && 120}` }}
         className={`rounded-full w-8 h-8  ${
-          hover && "bg-red-500 "
+          hover && " "
         }    dark:bg-pri bg-black transition-all  duration-700 ease-in-out flex justify-center items-center`}
       >
         <svg

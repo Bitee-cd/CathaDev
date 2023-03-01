@@ -7,20 +7,24 @@ import image from "../../../public/images/about_main.png";
 import BackGroundLines from "../Reusable/BackGroundLines";
 
 function AboutUs() {
-  const { squada } = useAppContext();
+  const { squada, textLeave, textEnter } = useAppContext();
   const { what_you_get, benefits } = about;
   return (
     <div className="relative">
       <BackGroundLines
         position="left-1/2 -translate-x-1/2"
-        top="top-1/2 -translate-y-1/2"
+        top="top-1/4 -translate-y-1/2"
       />
       <div className={` screen-center my-20 relative`}>
         <div className="z-2 zindex1">
           <h4 className=" font-semibold">ABOUT US</h4>
 
           <div>
-            <h1 className={`${squada.className}  lg:w-[70%] `}>
+            <h1
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
+              className={`${squada.className}  lg:w-[70%] `}
+            >
               What Will You Benefit?
             </h1>
             <p className=" lg:w-[80%] ">

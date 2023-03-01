@@ -16,7 +16,7 @@ const squada = Squada_One({
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
-  const { setCursorVariant, textLeave, textEnter } = useAppContext();
+  const { textLeave, textEnter } = useAppContext();
   return (
     <div className="relative">
       <navbar className="screen-center flex justify-between pt-5 items-center ">
@@ -46,7 +46,7 @@ function Navbar() {
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
             onClick={() => setShowNav(true)}
-            className=" bg-black py-1 w-[100px] hover:bg-pri hover:text-sec ease-in-out duration-500 rounded-[30px] dark:bg-pri text-pri dark:text-sec justify-center flex "
+            className=" bg-black border-[2px] border-sec dark:border-pri py-1 w-[100px] hover:bg-pri hover:text-sec ease-in-out duration-500 rounded-[30px] dark:bg-pri text-pri dark:text-sec justify-center flex "
           >
             Menu
           </button>

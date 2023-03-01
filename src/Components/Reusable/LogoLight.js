@@ -3,7 +3,7 @@ import { useAppContext } from "../Context/AppContext";
 import { useTheme } from "next-themes";
 
 const Logo = () => {
-  const { darkMode, textEnter, textLeave } = useAppContext();
+  const { textEnter, textLeave } = useAppContext();
   const { theme, setTheme } = useTheme();
   return (
     <svg

@@ -4,9 +4,7 @@ import { useTheme } from "next-themes";
 
 const ToggleSwitch = () => {
   const { theme, setTheme } = useTheme();
-  const { darkMode, setDarkMode } = useAppContext();
   const darkTheme = () => {
-    setDarkMode(!darkMode);
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (

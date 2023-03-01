@@ -7,6 +7,9 @@
   padding: 0;
   margin: 0;
 }
+body {
+  overflow-x: hidden;
+}
 /* html {
   background-color: #e3e3e3;
 }
@@ -38,7 +41,7 @@ h5,
 h6,
 div {
   padding: 0;
-  cursor: none;
+  /* cursor: none; */
   margin: 0;
 }
 /* General Styling*/
@@ -103,17 +106,20 @@ h6 {
   width: clamp(7.813rem, 8vw + 6rem, 14.625rem);
   height: clamp(7.813rem, 8vw + 6rem, 14.625rem);
   background: rgba(12, 12, 12, 0.54);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
-  border: 1px solid rgba(12, 12, 12, 0.57);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  z-index: 3;
-  @apply border-[2px] hover:bg-pri hover:border-[#FFFFFF] transition-all duration-100 hover:scale-125 dark:hover:bg-sec border-black dark:border-pri;
+  transform-origin: top center;
+
+  @apply border-[2px] hover:bg-pri hover:border-[#FFFFFF] transition-all duration-500 hover:scale-150 dark:hover:bg-sec border-black dark:border-pri;
+}
+.circle::before {
+  content: "";
+  position: absolute;
 }
 .submit_btn {
   width: clamp(7.813rem, 8vw + 6rem, 14.625rem);
@@ -167,13 +173,4 @@ input:focus {
   left: 0;
   pointer-events: none;
   z-index: 1000;
-}
-.blur {
-  /* From https://css.glass */
-  background: rgba(12, 12, 12, 0.54);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.6px);
-  -webkit-backdrop-filter: blur(5.6px);
-  border: 1px solid rgba(12, 12, 12, 0.57);
 }

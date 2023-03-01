@@ -30,7 +30,7 @@ const WhoWeAre = () => {
                 <h1 className={`${squada.className} big-text`}>
                   {item.number}+
                 </h1>
-                <p>{item.item}</p>
+                <p className="font-[700]">{item.item}</p>
               </div>
             ))
           : null}
