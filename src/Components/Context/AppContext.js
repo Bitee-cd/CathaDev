@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import React from "react";
 import { Squada_One } from "@next/font/google";
+import { Sora } from "@next/font/google";
 import { League_Spartan } from "@next/font/google";
 
 const Context = createContext();
@@ -11,6 +12,10 @@ const squada = Squada_One({
 const spartan = League_Spartan({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 export const AppContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,6 +36,7 @@ export const AppContext = ({ children }) => {
         setCursorVariant,
         textEnter,
         textLeave,
+        sora,
       }}
     >
       {children}

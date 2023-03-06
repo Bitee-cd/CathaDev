@@ -4,6 +4,7 @@ import { portfolio } from "@/utils/data";
 import Slider from "./Slider";
 import BackGroundLines from "../Reusable/BackGroundLines";
 import Quotes from "../svg/Quotes";
+import { ImageSlider } from "./SecondSlider";
 
 const Portfolio = () => {
   const { image_slider } = portfolio;
@@ -35,6 +36,7 @@ const Portfolio = () => {
         <div className="md:hidden">
           <Slider />
         </div>
+        <ImageSlider />
       </section>
     </div>
   );

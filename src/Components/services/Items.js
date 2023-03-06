@@ -2,43 +2,53 @@ import { services } from "@/utils/data";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useAppContext } from "../Context/AppContext";
+import BackGroundLines from "../Reusable/BackGroundLines";
 
 const Items = () => {
   const { items } = services;
-  const { darkMode } = useAppContext();
+  const { darkMode, sora } = useAppContext();
 
   return (
-    <div className="md:w-[60%] mx-auto grid md:grid-cols-2 gap-10">
-      {items.map((item) => (
-        <div
-          key={item.id}
-          className={`${
-            item.id % 2 === 0 && " relative"
-          } border border-sec dark:border-pri p-2 lg:p-5`}
-        >
-          <div className="w-[50%]  mx-auto">
-            <Image
-              alt={item.title}
-              src={darkMode ? item.image : item.image_dark}
-              placeholder="blur"
-              blurDataURL="/images/hero-image.png"
-              priority
-              width={700}
-              height={475}
-              sizes="100vw"
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
-            />
+    <>
+      <BackGroundLines position="left-[15%]" top="top-[25%] translate-y-1/2" />
+      <div
+        className={`${sora.className} screen-center   md:grid-rows-8 mx-auto grid md:grid-cols-2 gap-10`}
+      >
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className={`${
+              item.id % 2 !== 0
+                ? "md:ml-auto"
+                : item.id === 2
+                ? "md:row-start-2 md:col-start-2"
+                : ""
+            }  border border-sec w-[300px]  row-span-2 dark:hover:bg-pri dark:hover:text-sec hover:bg-sec duration-300 hover:text-pri dark:border-pri dark:hover:border-sec hover:border-pri p-5`}
+          >
+            <div className="w-[50%]  mx-auto">
+              <Image
+                alt={item.title}
+                src={darkMode ? item.image : item.image_dark}
+                placeholder="blur"
+                blurDataURL="/images/hero-image.png"
+                priority
+                width={700}
+                height={475}
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
+            </div>
+            <h4 className="w-[80%] mt-2 mx-auto text-center font-[700]">
+              {item.title}
+            </h4>
+            <h6 className="font-normal">{item.text}</h6>
           </div>
-          <h4 className="w-[60%] mx-auto text-center font-[700]">
-            {item.title}
-          </h4>
-          <h6>{item.text}</h6>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 

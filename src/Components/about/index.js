@@ -52,13 +52,7 @@ function AboutUs() {
                   placeholder="blur"
                   priority
                   src={image}
-                  width={700}
-                  height={475}
-                  sizes="100vw"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  className=""
                 />
               </div>
             </div>
