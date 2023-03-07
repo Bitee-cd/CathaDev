@@ -51,6 +51,7 @@ export const ImageSlider = () => {
     },
   };
 
+  console.log(translateValue);
   return (
     <div className="slider">
       <motion.div
@@ -88,13 +89,13 @@ export const ImageSlider = () => {
         ))}
       </motion.div>
       <button
-        className="slider__button slider__button--prev"
+        className="slider__button slider__button--prev "
         onClick={goToPrevSlide}
       >
         Previous
       </button>
       <button
-        className="slider__button slider__button--next"
+        className="slider__button slider__button--next right-0"
         onClick={goToNextSlide}
       >
         Next
@@ -109,13 +110,13 @@ export const ImageSlider = () => {
 
         .slider__wrapper {
           display: flex;
-          width: ${100 * images.length}%;
+          width: 100%;
         }
 
         .slider__image {
-          flex: 1;
+          
           min-width: 100%;
-          height: auto;
+          height:400px;
         }
 
         .slider__button {

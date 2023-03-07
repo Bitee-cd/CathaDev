@@ -23,7 +23,7 @@ const Items = () => {
                 : item.id === 2
                 ? "md:row-start-2 md:col-start-2"
                 : ""
-            }  border border-sec w-[300px]  row-span-2 dark:hover:bg-pri dark:hover:text-sec hover:bg-sec duration-300 hover:text-pri dark:border-pri dark:hover:border-sec hover:border-pri p-5`}
+            }  border border-sec md:w-[300px]  row-span-2 dark:hover:bg-pri dark:hover:text-sec hover:bg-sec duration-300 hover:text-pri dark:border-pri dark:hover:border-sec hover:border-pri p-5`}
           >
             <div className="w-[50%]  mx-auto">
               <Image

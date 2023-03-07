@@ -4,7 +4,7 @@ import Quotes from "../svg/Quotes";
 
 const SingleTestimonial = () => {
   return (
-    <div className="md:flex justify-between">
+    <div className="flex justify-between">
       <div className="w-[40%]">
         <Image
           alt="image"

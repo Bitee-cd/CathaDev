@@ -15,20 +15,17 @@ const Portfolio = () => {
         <h4 className="my-5 font-[700] uppercase">Portfolio</h4>
         <div className="hidden md:grid grid-cols-3 gap-5 lg:gap-10">
           {image_slider.map((image) => (
-            <div key={image.id}>
+            <div key={image.id} className="h-[500px] 2xl:h-auto">
               <Image
                 alt="image"
-                src="/images/portfolio/slider.png"
+                src={image.src}
                 placeholder="blur"
                 blurDataURL="/images/hero-image.png"
                 priority
                 width={700}
                 height={475}
+                className="object-cover h-full w-full"
                 sizes="100vw"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
               />
             </div>
           ))}
@@ -36,7 +33,6 @@ const Portfolio = () => {
         <div className="md:hidden">
           <Slider />
         </div>
-        <ImageSlider />
       </section>
     </div>
   );
