@@ -28,13 +28,29 @@ const Items = () => {
             <div className="w-[50%]  mx-auto">
               <Image
                 alt={item.title}
-                src={darkMode ? item.image : item.image_dark}
+                src={item.image_dark}
                 placeholder="blur"
                 blurDataURL="/images/hero-image.png"
                 priority
                 width={700}
                 height={475}
                 sizes="100vw"
+                className="hidden dark:block"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
+              <Image
+                alt={item.title}
+                src={item.image}
+                placeholder="blur"
+                blurDataURL="/images/hero-image.png"
+                priority
+                width={700}
+                height={475}
+                sizes="100vw"
+                className="dark:hidden"
                 style={{
                   width: "100%",
                   height: "auto",

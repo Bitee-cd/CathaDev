@@ -32,7 +32,7 @@ const WhoWeAre = () => {
                 >
                   {item.number}+
                 </h1>
-                <p className="font-[700]  text-[12px] mx-auto w-[50%] lg:w-full md:text[14px] lg:text-[20px] ">
+                <p className="font-[700]  text-[12px] mx-auto w-[50%] lg:w-full md:text-[16px] lg:text-[25px] ">
                   {item.item}
                 </p>
               </div>

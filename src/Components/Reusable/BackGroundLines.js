@@ -1,10 +1,6 @@
-import Image from "next/image";
 import React from "react";
-import lines from "../../../public/images/about/line.png";
-import line_dark from "../../../public/images/about/line_dark.png";
 import styles from "./styles.module.css";
 import { useAppContext } from "../Context/AppContext";
-import { useTheme } from "next-themes";
 
 const BackGroundLines = ({ position, top }) => {
   const { darkMode } = useAppContext();

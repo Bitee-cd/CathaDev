@@ -4,7 +4,7 @@ import Quotes from "../svg/Quotes";
 
 const SingleTestimonial = ({ item }) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
       <div className="w-[40%]">
         <Image
           alt="image"
@@ -22,12 +22,14 @@ const SingleTestimonial = ({ item }) => {
         />
       </div>
       <div className="w-[55%]">
-        <div className=" flex justify-start">
+        <div className=" flex justify-start items-center">
           <div className="rotate-180">
             <Quotes />
           </div>
         </div>
-        <p className="mx-auto w-[80%] my-2">{item.text}</p>
+        <p className="text-[12px] md:text-[16px] lg:text-[25px] mx-auto w-[80%] my-2">
+          {item.text}
+        </p>
         <div className="flex justify-end">
           <Quotes />
         </div>

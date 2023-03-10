@@ -6,27 +6,22 @@ import { Link } from "react-scroll";
 const Button = ({ title }) => {
   const [push, setPush] = useState(false);
   const { darkMode } = useAppContext();
-  const [hover, setHover] = useState(true);
+  const [hover, setHover] = useState(false);
+  console.log(hover);
 
   return (
     <Link to="contact" smooth={true} duration={1500}>
       <motion.div
         onHoverStart={() => setHover(true)}
         onHoverEnd={() => setHover(false)}
-        animate={{ duration: 2 }}
-        whileHover={{
-          delay: 0.5,
-          duration: 1,
-          backgroundColor: `${darkMode ? "#0C0C0C" : "#E3E3E3"}`,
-        }}
-        style={{ originX: "left" }}
-        className={` flex ${""} items-center relative h-[32px] transition-all  duration-700 rounded-[32px]  hover:cursor-pointer`}
+        className={` flex ${
+          hover ? "bg-sec text-pri dark:bg-sec dark:text-pri" : ""
+        }   items-center  relative h-[32px] transition-all w-[200px]  duration-700 rounded-[32px]`}
       >
         <motion.div
-          animation={{ duration: 1, x: `${hover && 120}` }}
           className={`rounded-full w-8 h-8  ${
-            hover && " "
-          }    dark:bg-pri bg-black transition-all  duration-700 ease-in-out flex justify-center items-center`}
+            hover ? "mr-[-120px]" : "ml-0"
+          }    dark:bg-pri bg-black transition-all duration-1000  ease-in-out flex justify-center items-center`}
         >
           <svg
             width="8"
@@ -34,15 +29,29 @@ const Button = ({ title }) => {
             viewBox="0 0 8 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="hidden dark:block"
           >
             <path
               d="M0.426086 0.888885L7.13913 8.547L0.426086 15.1111"
-              stroke={!darkMode ? "#0C0C0C" : "#E3E3E3"}
+              stroke="#0C0C0C"
+            />
+          </svg>
+          <svg
+            width="8"
+            height="16"
+            viewBox="0 0 8 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="dark:hidden"
+          >
+            <path
+              d="M0.426086 0.888885L7.13913 8.547L0.426086 15.1111"
+              stroke="#E3E3E3"
             />
           </svg>
         </motion.div>
         <span
-          className={`${hover && "dark:text-pri text-sec"} px-2  text-center`}
+          className={`${hover && "dark:text-sec text-pri"} px-2  text-center`}
         >
           {title}
         </span>

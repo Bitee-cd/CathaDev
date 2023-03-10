@@ -10,11 +10,14 @@ const Testimonials = () => {
   useEffect(() => {
     setTimeout(function () {
       setCurrentValue((currentValue % 3) + 1);
-    }, 6000);
+    }, 10000);
   });
   return (
     <Element name="testimonials" className="element">
-      <section className="screen-center my-10 lg:my-20" id="testimonials">
+      <section
+        className="screen-center my-10 lg:my-20 overflow-x-hidden"
+        id="testimonials"
+      >
         <h4 className="my-5 font-[700] uppercase">Testimonials</h4>
         <AnimatePresence mode="wait">
           {items.map((item, index) => {
@@ -23,10 +26,10 @@ const Testimonials = () => {
               isCurrent && (
                 <motion.div
                   key={index}
-                  initial={{ x: "100%" }}
-                  animate={{ x: 0 }}
-                  exit={{ x: "-100%" }}
-                  transition={{ duration: 2 }}
+                  initial={{ x: "100%", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: "-100%", opacity: 0 }}
+                  transition={{ duration: 1 }}
                 >
                   <SingleTestimonial item={item} />
                 </motion.div>

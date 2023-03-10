@@ -40,7 +40,7 @@ export default function HeroSection() {
               conversion rates and good SEO
             </p>
           </div>
-          <div className="flex-start flex">
+          <div className="">
             <Button title="Contact Us" />
           </div>
 
