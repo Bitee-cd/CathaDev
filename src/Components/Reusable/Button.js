@@ -15,12 +15,12 @@ const Button = ({ title }) => {
         onHoverStart={() => setHover(true)}
         onHoverEnd={() => setHover(false)}
         className={` flex ${
-          hover ? "bg-sec text-pri dark:bg-sec dark:text-pri" : ""
+          hover ? "" : ""
         }   items-center  relative h-[32px] transition-all w-[200px]  duration-700 rounded-[32px]`}
       >
         <motion.div
           className={`rounded-full w-8 h-8  ${
-            hover ? "mr-[-120px]" : "ml-0"
+            hover ? "" : ""
           }    dark:bg-pri bg-black transition-all duration-1000  ease-in-out flex justify-center items-center`}
         >
           <svg
