@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "../Reusable/Button";
 import ToggleSwitch from "../Reusable/ToggleSwitch";
@@ -17,9 +17,14 @@ const squada = Squada_One({
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
   const { textLeave, textEnter } = useAppContext();
+  useEffect(() => {
+    // Add padding to the top of the body element equal to the height of the navbar
+    // const navBarHeight = document.querySelector("nav").offsetHeight;
+    // document.body.style.paddingTop = navBarHeight + "px";
+  }, []);
   return (
     <div className="relative">
-      <navbar className="screen-center flex justify-between pt-5 items-center ">
+      <nav className="screen-center flex justify-between pt-5 items-center ">
         <div className="">
           <Link href="/">
             <div className="flex items-center gap-2">
@@ -52,6 +57,9 @@ function Navbar() {
           </button>
           <ToggleSwitch />
         </div>
+        <div className="md:hidden">
+          <ToggleSwitch />
+        </div>
         <div
           onClick={() => {
             setShowNav(!showNav);
@@ -74,7 +82,7 @@ function Navbar() {
             }`}
           ></div>
         </div>
-      </navbar>
+      </nav>
       <AnimatePresence>
         {showNav && (
           <SideNavigation showNav={showNav} setShowNav={setShowNav} />

@@ -3,9 +3,11 @@ import { useAppContext } from "../Context/AppContext";
 import { useTheme } from "next-themes";
 
 const ToggleSwitch = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const { darkMode, setDarkMode } = useAppContext();
   const darkTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setDarkMode(!darkMode);
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
   return (
     <div className="relative hover:cursor-pointer" onClick={darkTheme}>

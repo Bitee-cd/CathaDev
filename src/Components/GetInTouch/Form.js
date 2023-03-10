@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Form = () => {
   return (
@@ -38,9 +39,19 @@ const Form = () => {
           className="input2 "
         />
       </div>
-      <div className="mt-5 flex justify-center ">
-        <input type="submit" className="submit_btn cursor-pointer" />
-      </div>
+      <motion.div
+        className={`submit_btn origin-top-left mt-10 mx-auto `}
+        whileHover={{ scale: 1.2 }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
+      >
+        <p
+          // onMouseEnter={textEnter}
+          // onMouseLeave={textLeave}
+          className="uppercase  text-black text-center dark:text-pri m-5"
+        >
+          submit
+        </p>
+      </motion.div>
     </form>
   );
 };

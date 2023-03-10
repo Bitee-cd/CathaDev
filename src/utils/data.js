@@ -120,33 +120,49 @@ export const navbar = {
   side_nav: [
     {
       id: 1,
-      link: "",
+      link: "home",
       name: "Home",
     },
     {
       id: 2,
-      link: "",
+      link: "about-us",
       name: "About Us",
     },
     {
       id: 3,
-      link: "",
+      link: "services",
       name: "Services",
     },
     {
       id: 4,
-      link: "",
+      link: "portfolio",
       name: "Portfolio",
     },
     {
       id: 5,
-      link: "",
+      link: "testimonials",
       name: "Testimonials",
     },
     {
       id: 6,
-      link: "",
+      link: "contact",
       name: "Contact Us",
+    },
+  ],
+};
+export const testimonial = {
+  items: [
+    {
+      id: 1,
+      text: "advertising materials that support your promotional strategies. our graphic design includes business cards, flyers, brochures, magazines, pamphlets, stickers, and branded office stationery",
+    },
+    {
+      id: 2,
+      text: "advertising materials that support your promotional strategies. our graphic design includes business cards, flyers, brochures, magazines, pamphlets, stickers, and branded office stationery Hope Jonah",
+    },
+    {
+      id: 3,
+      text: "advertising materials that support your promotional strategies. our graphic design includes business cards, flyers, brochures, magazines, pamphlets, stickers, and branded office stationery by Abubakr Za",
     },
   ],
 };

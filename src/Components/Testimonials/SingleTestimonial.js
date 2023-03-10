@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Quotes from "../svg/Quotes";
 
-const SingleTestimonial = () => {
+const SingleTestimonial = ({ item }) => {
   return (
     <div className="flex justify-between">
       <div className="w-[40%]">
@@ -27,11 +27,7 @@ const SingleTestimonial = () => {
             <Quotes />
           </div>
         </div>
-        <p className="mx-auto w-[80%] my-2">
-          advertising materials that support your promotional strategies. our
-          graphic design includes business cards, flyers, brochures, magazines,
-          pamphlets, stickers, and branded office stationery.
-        </p>
+        <p className="mx-auto w-[80%] my-2">{item.text}</p>
         <div className="flex justify-end">
           <Quotes />
         </div>

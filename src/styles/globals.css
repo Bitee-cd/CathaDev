@@ -10,23 +10,7 @@
 body {
   overflow-x: hidden;
 }
-/* html {
-  background-color: #e3e3e3;
-}
 
-body {
-  background-color: #e3e3e3;
-} */
-
-/* .dark {
-  html {
-    background-color: #0c0c0c;
-  }
-
-  body {
-    background-color: #0c0c0c;
-  }
-} */
 .dark {
   background-color: #0c0c0c;
 }
@@ -114,8 +98,7 @@ h6 {
   align-items: center;
   position: absolute;
   transform-origin: top center;
-
-  @apply border-[2px] hover:bg-pri hover:border-[#FFFFFF] transition-all duration-500 hover:scale-150 dark:hover:bg-sec border-black dark:border-pri;
+  @apply border-[2px] hover:bg-pri hover:border-[#FFFFFF]  dark:hover:bg-sec border-black dark:border-pri;
 }
 .circle::before {
   content: "";
@@ -146,17 +129,29 @@ textarea {
   -khtml-border-radius: 0;
   -webkit-appearance: none;
   color: inherit;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 textarea:focus,
 input:focus {
-  outline: none;
-  @apply bg-sec text-pri dark:bg-pri dark:text-sec;
+  border: 0;
+  border-color: inherit;
+  @apply bg-sec text-pri dark:bg-pri dark:text-sec border-transparent;
 }
 .input {
-  @apply w-full  h-[30px] lg:h-[50px] p-text font-[500] border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
+  @apply w-full  outline-none focus:ring-0 h-[30px] lg:h-[50px] p-text font-[500] border-sec dark:border-pri rounded-none  border-b-[2px] bg-transparent mt-2;
 }
 .input2 {
-  @apply w-full h-full p-text font-[600] border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
+  @apply w-full h-full p-text font-[600] focus:ring-0 border-sec dark:border-pri rounded-none outline-none  border-b-[2px] bg-transparent mt-2;
 }
 .hamburger {
   @apply w-6 origin-center h-1 mt-1 rounded  transition duration-500;
@@ -173,4 +168,7 @@ input:focus {
   left: 0;
   pointer-events: none;
   z-index: 1000;
+}
+.social-icons {
+  @apply h-[22px] w-[22px] rounded-full flex justify-center items-center bg-sec dark:bg-pri;
 }

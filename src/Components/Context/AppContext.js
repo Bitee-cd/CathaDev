@@ -3,6 +3,7 @@ import React from "react";
 import { Squada_One } from "@next/font/google";
 import { Sora } from "@next/font/google";
 import { League_Spartan } from "@next/font/google";
+import { useTheme } from "next-themes";
 
 const Context = createContext();
 const squada = Squada_One({
@@ -18,7 +19,8 @@ const sora = Sora({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 export const AppContext = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const { theme } = useTheme();
+  const [darkMode, setDarkMode] = useState(theme == "light" ? true : false);
   const [mouseHovered, setMouseHovered] = useState(false);
   const [cursorVariant, setCursorVariant] = useState("default");
   const textEnter = () => setCursorVariant("text");

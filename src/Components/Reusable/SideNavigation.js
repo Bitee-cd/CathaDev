@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useAppContext } from "../Context/AppContext";
 import { useRouter } from "next/router";
 import { navbar } from "@/utils/data";
+import { Link } from "react-scroll";
 
 const SideNavigation = ({ showNav, setShowNav }) => {
   const { squada } = useAppContext();
@@ -29,11 +30,20 @@ const SideNavigation = ({ showNav, setShowNav }) => {
         </div>
         <div className={`${squada.className} flex flex-col text-[50px]`}>
           {side_nav.map((item) => (
-            <a href="#" className="" key={item.id}>
+            <Link
+              to={item.link}
+              spy={true}
+              smooth={true}
+              duration={1000}
+              activeClass="border-white"
+              className=""
+              key={item.id}
+              onClick={() => setShowNav(!showNav)}
+            >
               <div className={`${active && "border-white"} inline-block`}>
                 {item.name}
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

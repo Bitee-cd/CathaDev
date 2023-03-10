@@ -27,10 +27,14 @@ const WhoWeAre = () => {
         {who_we_are
           ? who_we_are.map((item) => (
               <div key={item.id}>
-                <h1 className={`${squada.className} big-text`}>
+                <h1
+                  className={`${squada.className} text-[40px] md:text-[60px] lg:text-[120px]`}
+                >
                   {item.number}+
                 </h1>
-                <p className="font-[700]">{item.item}</p>
+                <p className="font-[700]  text-[12px] mx-auto w-[50%] lg:w-full md:text[14px] lg:text-[20px] ">
+                  {item.item}
+                </p>
               </div>
             ))
           : null}

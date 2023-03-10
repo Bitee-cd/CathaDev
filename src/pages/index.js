@@ -14,6 +14,7 @@ import ScrollButton from "@/Components/UI/ScrollButton";
 import Footer from "@/Components/UI/Footer";
 import Cursor from "@/Components/UI/Cursor";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 const squada = Squada_One({
   subsets: ["latin"],
   weight: ["400"],
@@ -21,7 +22,10 @@ const squada = Squada_One({
 });
 
 export default function Home() {
+  const { theme } = useTheme();
   const { spartan, squada, darkMode } = useAppContext();
+  useEffect(() => {}, [theme, darkMode]);
+  const [title, setTitle] = useState("Home");
   return (
     <>
       <Head>

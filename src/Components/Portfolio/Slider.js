@@ -53,9 +53,9 @@ const Slider = () => {
         <motion.div
           whileTap={{ scale: 0.9 }}
           onClick={() => setPrev()}
-          className="w-[50px] flex items-center justify-center h-[50px] rounded-full bg-sec dark:bg-pri"
+          className="w-[20px] flex items-center justify-center h-[20px] rounded-full bg-sec dark:bg-pri"
         >
-          <AiOutlineArrowLeft color={`${darkMode ? "#0C0C0C" : "E3E3E3"}`} />
+          <AiOutlineArrowLeft className="text-pri dark:text-sec " size="70%" />
         </motion.div>
         <AnimatePresence initial={false} custom={currentIndex} mode="wait">
           {image_slider.map((image, index) => {
@@ -75,7 +75,7 @@ const Slider = () => {
                   // transition={{ ease: "easeOut", duration: 0.5 }}
                   custom={direction}
                   transition={{ duration: 0.5, opacity: { duration: 0.3 } }}
-                  className="w-[80%]"
+                  className="w-[85%]"
                 >
                   <Image
                     alt="image"
@@ -86,7 +86,7 @@ const Slider = () => {
                     width={700}
                     height={475}
                     sizes="100vw"
-                    className="w-full h-[400px] object-contain"
+                    className="w-full h-[400px] object-cover"
                   />
                 </motion.div>
               )
@@ -96,9 +96,9 @@ const Slider = () => {
         <motion.div
           whileTap={{ scale: 0.9 }}
           onClick={() => setNext()}
-          className="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-sec dark:bg-pri"
+          className="w-[20px] h-[20px] flex items-center justify-center rounded-full bg-sec dark:bg-pri"
         >
-          <AiOutlineArrowRight color={`${darkMode ? "#0C0C0C" : "E3E3E3"}`} />
+          <AiOutlineArrowRight className="text-pri dark:text-sec" size="70%" />
         </motion.div>
       </div>
     </>
