@@ -3,6 +3,8 @@ import SingleTestimonial from "./SingleTestimonial";
 import { AnimatePresence, motion } from "framer-motion";
 import { testimonial } from "@/utils/data";
 import { Element } from "react-scroll";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 const Testimonials = () => {
   const [currentValue, setCurrentValue] = useState(1);
@@ -20,24 +22,11 @@ const Testimonials = () => {
         id="testimonials"
       >
         <h4 className="my-5 font-[700] uppercase">Testimonials</h4>
-        <AnimatePresence mode="wait">
-          {items.map((item, index) => {
-            const isCurrent = currentValue - 1 === index;
-            return (
-              isCurrent && (
-                <motion.div
-                  key={index}
-                  initial={{ x: "100%", opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "-100%", opacity: 0 }}
-                  transition={{ duration: 1 }}
-                >
-                  <SingleTestimonial item={item} />
-                </motion.div>
-              )
-            );
-          })}
-        </AnimatePresence>
+        <Slide arrows={false}>
+          {items.map((item, index) => (
+            <SingleTestimonial key={index} item={item} />
+          ))}
+        </Slide>
         <div className="flex gap-5 justify-center items-center mt-10">
           {items.map((item, index) => (
             <div

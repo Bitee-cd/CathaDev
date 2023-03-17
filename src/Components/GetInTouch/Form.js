@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useAppContext } from "../Context/AppContext";
 
 const Form = () => {
+  const { textEnter, textLeave } = useAppContext();
   return (
     <form className="grid gap-y-5">
       <div className="my-2">
@@ -40,7 +42,9 @@ const Form = () => {
         />
       </div>
       <motion.div
-        className={`submit_btn origin-top-left mt-10 mx-auto `}
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
+        className={`submit_btn origin-top-left mt-10 mx-auto bg-pri dark:bg-sec `}
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
       >
