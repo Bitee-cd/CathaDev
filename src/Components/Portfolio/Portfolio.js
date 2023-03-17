@@ -7,8 +7,9 @@ import { Element } from "react-scroll";
 
 const Portfolio = () => {
   const { image_slider } = portfolio;
+
   return (
-    <Element name="services" className="element">
+    <Element name="services" className="element" id="section-6">
       <div className="relative" id="portfolio">
         <BackGroundLines top="bottom-0" position="right-1/4" />
         <section className="screen-center my-10 lg:my-20 zindex2">

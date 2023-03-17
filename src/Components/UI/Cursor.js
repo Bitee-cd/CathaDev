@@ -45,7 +45,7 @@ const Cursor = () => {
       <motion.div
         variants={variants}
         animate={cursorVariant}
-        className="cursor border-[2px] dark:bg-pri bg-sec"
+        className="cursor border-[2px] dark:bg-pri bg-sec hidden lg:block"
       ></motion.div>
       {/* <motion.div
         variants={variants.default}

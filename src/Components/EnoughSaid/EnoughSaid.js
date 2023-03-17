@@ -7,8 +7,9 @@ import Button from "../Reusable/Button";
 
 const EnoughSaid = () => {
   const { squada, textEnter, textLeave } = useAppContext();
+
   return (
-    <section className="my-10 lg:my-20 screen-center">
+    <section className="my-10 lg:my-20 screen-center" id="section-5">
       <div className={`${styles.background} flex p-5`}>
         <div className="w-[65%]">
           <h1

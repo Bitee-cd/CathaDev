@@ -7,13 +7,14 @@ import { Element } from "react-scroll";
 const Testimonials = () => {
   const [currentValue, setCurrentValue] = useState(1);
   const { items } = testimonial;
+
   useEffect(() => {
     setTimeout(function () {
       setCurrentValue((currentValue % 3) + 1);
     }, 10000);
   });
   return (
-    <Element name="testimonials" className="element">
+    <Element name="testimonials" className="element" id="section-7">
       <section
         className="screen-center my-10 lg:my-20 overflow-x-hidden"
         id="testimonials"

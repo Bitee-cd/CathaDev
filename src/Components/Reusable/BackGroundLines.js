@@ -9,7 +9,10 @@ const BackGroundLines = ({ position, top }) => {
       <Lines />
       <MobileLines />
       <div
-        className={`${styles.sphere} ${position}  -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
+        className={`${styles.sphere} ${position}  dark:hidden  sphere_light -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
+      ></div>
+      <div
+        className={`${styles.sphere} ${position}  hidden dark:block  sphere_dark -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
       ></div>
     </div>
   );
