@@ -5,6 +5,41 @@ import { useAppContext } from "../Context/AppContext";
 
 const Form = () => {
   const { textEnter, textLeave } = useAppContext();
+  const SendMessage = (params) => {
+    const templateParams = {
+      to_name: "Cathadev",
+      notes: "Message from cathadev portfolio",
+      from_name: params.name,
+      message: params.message,
+      budget: params.budget,
+      organistaion: params.organistaion,
+    };
+    const pubkey = process.env.PUBLIC_KEY;
+
+    emailjs
+      .send(
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
+        templateParams,
+        process.env.PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    var formData = new FormData(e.target);
+
+    const form_values = Object.fromEntries(formData);
+    SendMessage(form_values);
+  };
   return (
     <form className="grid gap-y-5" onSubmit={submitHandler}>
       <div className="my-2">
