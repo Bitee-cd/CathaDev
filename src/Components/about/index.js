@@ -1,19 +1,23 @@
+import { useState } from "react";
 import Image from "next/image";
 import { useAppContext } from "../Context/AppContext";
 import SingleItem from "./SingleItem";
 import { about } from "@/utils/data";
 import Benefits from "./Benefits";
-import image from "../../../public/images/about_main.png";
+import image1 from "../../../public/images/about_main.png";
+import image2 from "../../../public/images/price.png";
+import image3 from "../../../public/images/google.png";
 import BackGroundLines from "../Reusable/BackGroundLines";
 import { Element } from "react-scroll";
 
 function AboutUs() {
   const { squada, textLeave, textEnter } = useAppContext();
   const { what_you_get, benefits } = about;
+  const [image, setImage] = useState(1);
 
   return (
     <>
-      <Element name="about-us" className="element">
+      <Element name="about-us" className="element" id="section-2">
         <div className="relative" id="about-us">
           <BackGroundLines
             position="left-1/2 -translate-x-1/2"
@@ -46,7 +50,11 @@ function AboutUs() {
                     <div className=""></div>
                     <div className="flex lg:w-[90%] mt-5 flex-col gap-2 border-t-[3px] border-sec dark:border-pri pb-2">
                       {benefits.map((item) => (
-                        <Benefits key={item.id} item={item} />
+                        <Benefits
+                          key={item.id}
+                          item={item}
+                          setImage={setImage}
+                        />
                       ))}
                     </div>
                   </div>
@@ -55,8 +63,17 @@ function AboutUs() {
                       alt=" trusted hands holding website"
                       placeholder="blur"
                       priority
-                      src={image}
-                      className=""
+                      quality="100"
+                      src={
+                        image === 1
+                          ? image1
+                          : image === 2
+                          ? image2
+                          : image === 3
+                          ? image3
+                          : image1
+                      }
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 </div>

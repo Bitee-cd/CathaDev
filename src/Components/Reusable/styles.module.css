@@ -8,88 +8,8 @@
     rgba(12, 12, 12, 0.6) 20.15%,
     rgba(227, 227, 227, 0.28) 80%
   );
-  animation: gradient-animation 5s infinite ease-in;
 }
-@keyframes gradient-animation {
-  0% {
-    background: linear-gradient(
-      0deg,
-      rgba(12, 12, 12, 0.6) 10%,
-      rgba(227, 227, 227, 0.28) 80%
-    );
-  }
-  /* 10% {
-    background: linear-gradient(
-      36deg,
-      rgba(12, 12, 12, 0.6) 10%,
-      rgba(227, 227, 227, 0.28) 80%
-    );
-  }
-  20% {
-    background: linear-gradient(
-      72deg,
-      rgba(12, 12, 12, 0.6) 10%,
-      rgba(227, 227, 227, 0.28) 80%
-    );
-  }
-  30% {
-    background: linear-gradient(
-      108deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(120, 120, 120, 0.4) 50%,
-      rgba(227, 227, 227, 0.28) 80%
-    );
-  }
-  40% {
-    background: linear-gradient(
-      144deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  } */
-  50% {
-    background: linear-gradient(
-      180deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  }
-  /* 60% {
-    background: linear-gradient(
-      216deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  }
-  70% {
-    background: linear-gradient(
-      252deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  }
-  80% {
-    background: linear-gradient(
-      288deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  }
-  90% {
-    background: linear-gradient(
-      324deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  } */
-  100% {
-    background: linear-gradient(
-      340deg,
-      rgba(12, 12, 12, 0.6) 20.15%,
-      rgba(227, 227, 227, 0.28) 70%
-    );
-  }
-}
+
 @media only screen and (max-width: 668px) {
   .sphere {
     width: 170px;

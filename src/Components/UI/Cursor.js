@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useAppContext } from "../Context/AppContext";
 
 const Cursor = () => {
-  const { cursorVariant, textEnter, textLeave } = useAppContext();
+  const { cursorVariant } = useAppContext();
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -41,21 +41,11 @@ const Cursor = () => {
   };
 
   return (
-    <>
-      <motion.div
-        variants={variants}
-        animate={cursorVariant}
-        className="cursor border-[2px] dark:bg-pri bg-sec"
-      ></motion.div>
-      {/* <motion.div
-        variants={variants.default}
-        animate={cursorVariant}
-        className="bg-sec dark:bg-pri w-[11px] fixed h-[11px] rounded-full"
-      ></motion.div> */}
-      {/* <div className="absolute  top-[18px] right-[-5px]">
-        <CursorArrow />
-      </div> */}
-    </>
+    <motion.div
+      variants={variants}
+      animate={cursorVariant}
+      className="cursor border-[2px] dark:bg-pri bg-sec hidden lg:block"
+    ></motion.div>
   );
 };
 

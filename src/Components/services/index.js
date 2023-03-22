@@ -6,9 +6,10 @@ import { Element } from "react-scroll";
 
 const Services = () => {
   const { squada, textLeave, textEnter } = useAppContext();
+
   return (
-    <Element name="services" className="element">
-      <div className="relative" id="services">
+    <Element name="services" className="element" id="section-4">
+      <div className="relative">
         <BackGroundLines position="right-[15%]" top="top-0" />
         <section className="screen-center my-20 zindex2">
           <h4 className="my-5 font-[700] uppercase">Services</h4>

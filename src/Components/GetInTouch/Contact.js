@@ -7,8 +7,9 @@ import { Element } from "react-scroll";
 
 const Contact = () => {
   const { squada, spartan, textLeave, textEnter } = useAppContext();
+
   return (
-    <Element name="contact" className="element">
+    <Element name="contact" className="element" id="section-8">
       <div className={`relative ${spartan.className}`} id="contact">
         <BackGroundLines
           position="left-[40%] -translate-x-1/2"
@@ -28,7 +29,7 @@ const Contact = () => {
             you shortly with a quotation
           </p>
           <div className="grid md:grid-cols-2">
-            <div className="absolute left-1/2 -translate-x-1/2 w-full md:relative -z-20 md:z-0 opacity-40 md:opacity-100 flex items-center justify-center">
+            <div className="absolute left-1/2 -translate-x-1/2 w-full md:relative -z-20 md:z-0 opacity-20 md:opacity-100 flex items-center justify-center">
               <ContactSvg />
             </div>
             <Form />

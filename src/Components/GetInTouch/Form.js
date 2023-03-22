@@ -1,43 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { useAppContext } from "../Context/AppContext";
 
 const Form = () => {
-  const SendMessage = (params) => {
-    const templateParams = {
-      to_name: "Cathadev",
-      notes: "Message from cathadev portfolio",
-      from_name: params.name,
-      message: params.message,
-      budget: params.budget,
-      organistaion: params.organistaion,
-    };
-    const pubkey = process.env.PUBLIC_KEY;
-
-    emailjs
-      .send(
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
-        templateParams,
-        process.env.PUBLIC_KEY
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (err) => {
-          console.log("FAILED...", err);
-        }
-      );
-  };
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    var formData = new FormData(e.target);
-
-    const form_values = Object.fromEntries(formData);
-    SendMessage(form_values);
-  };
+  const { textEnter, textLeave } = useAppContext();
   return (
     <form className="grid gap-y-5" onSubmit={submitHandler}>
       <div className="my-2">
@@ -96,8 +63,10 @@ const Form = () => {
           className="input2 "
         />
       </div>
-      <motion.button
-        className={`submit_btn origin-top-left mt-10 mx-auto `}
+      <motion.div
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
+        className={`submit_btn origin-top-left mt-10 mx-auto bg-pri dark:bg-sec `}
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
       >
@@ -108,7 +77,7 @@ const Form = () => {
         >
           submit
         </p>
-      </motion.button>
+      </motion.div>
     </form>
   );
 };

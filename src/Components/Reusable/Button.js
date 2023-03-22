@@ -7,19 +7,18 @@ const Button = ({ title }) => {
   const [push, setPush] = useState(false);
   const { darkMode } = useAppContext();
   const [hover, setHover] = useState(false);
-  console.log(hover);
 
   return (
     <Link to="contact" smooth={true} duration={1500}>
       <motion.div
         onHoverStart={() => setHover(true)}
         onHoverEnd={() => setHover(false)}
-        className={` flex ${
-          hover ? "" : ""
-        }   items-center  relative h-[32px] transition-all w-[200px]  duration-700 rounded-[32px]`}
+        className={`flex ${
+          hover ? "bg-sec text-pri dark:bg-pri dark:text-sec" : ""
+        }   items-center  relative h-[32px] transition-all w-[150px]  duration-700 rounded-[32px]`}
       >
         <motion.div
-          className={`rounded-full w-8 h-8  ${
+          className={`rounded-full w-8 h-8 ${
             hover ? "" : ""
           }    dark:bg-pri bg-black transition-all duration-1000  ease-in-out flex justify-center items-center`}
         >
@@ -50,11 +49,7 @@ const Button = ({ title }) => {
             />
           </svg>
         </motion.div>
-        <span
-          className={`${hover && "dark:text-sec text-pri"} px-2  text-center`}
-        >
-          {title}
-        </span>
+        <span className={`px-2 text-center`}>{title}</span>
       </motion.div>
     </Link>
   );

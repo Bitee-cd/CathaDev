@@ -10,16 +10,17 @@ export default function HeroSection() {
   return (
     <Element name="home" className="element">
       <section
+        id="section-1"
         className={` min-h-screen 2xl:min-h-[70vh] overflow-hidden  mx-auto flex items-center relative`}
       >
         <div
-          className={`zindex1 md:w-[50%] mt-20 top-0 md:top-1/2 md:-translate-y-1/2 right-0 absolute  `}
+          className={`zindex1 md:w-[50%] mt-20 top-0 h-full md:top-1/2 md:-translate-y-1/2 right-0 absolute  `}
         >
-          <div className={` top-0  flex justify-end`}>
+          <div className={` h-full w-full flex justify-end`}>
             <img
               src={"/images/hero-image.png"}
               alt="hero-image"
-              className=" object-contain h-full w-full lg:h-[80%] lg:w-[80%]"
+              className=" object-cover h-full w-full "
             />
           </div>
         </div>
@@ -80,7 +81,7 @@ export default function HeroSection() {
   );
 }
 export const Paragraph = ({ text1, text2, position }) => {
-  const { textLeave, textEnter } = useAppContext();
+  const { textLeave, textEnter, spartan } = useAppContext();
   return (
     <motion.div
       className={`circle ${position}`}
@@ -90,7 +91,7 @@ export const Paragraph = ({ text1, text2, position }) => {
       <p
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
-        className="uppercase p-tiny-text text-black text-center dark:text-pri m-5"
+        className={`${spartan.className} uppercase circle-text text-sec text-center dark:text-pri m-3 lg:m-5`}
       >
         {text1} <br></br>
         {text2}

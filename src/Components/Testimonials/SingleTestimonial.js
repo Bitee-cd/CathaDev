@@ -22,7 +22,7 @@ const SingleTestimonial = ({ item }) => {
         />
       </div>
       <div className="w-[55%]">
-        <div className=" flex justify-start items-center">
+        <div className="w-[5%] flex justify-start items-center">
           <div className="rotate-180">
             <Quotes />
           </div>
@@ -30,7 +30,7 @@ const SingleTestimonial = ({ item }) => {
         <p className="text-[12px] md:text-[16px] lg:text-[25px] mx-auto w-[80%] my-2">
           {item.text}
         </p>
-        <div className="flex justify-end">
+        <div className="w-[5%] ml-auto">
           <Quotes />
         </div>
       </div>

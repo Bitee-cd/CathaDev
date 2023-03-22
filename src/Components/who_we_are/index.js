@@ -1,13 +1,13 @@
 import { about } from "@/utils/data";
-import React, { useEffect } from "react";
+import React from "react";
 import { useAppContext } from "../Context/AppContext";
 
 const WhoWeAre = () => {
   const { who_we_are } = about;
-  const { squada, darkMode } = useAppContext();
-  useEffect(() => {}, [darkMode]);
+  const { squada } = useAppContext();
+
   return (
-    <section className="screen-center mt-10">
+    <section className="screen-center mt-10" id="section-3">
       <h4 className="my-5 font-[700]">WHO WE ARE</h4>
       <div className="md:w-[80%]">
         <p>

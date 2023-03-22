@@ -7,10 +7,11 @@ import Button from "../Reusable/Button";
 
 const EnoughSaid = () => {
   const { squada, textEnter, textLeave } = useAppContext();
+
   return (
-    <section className="my-10 lg:my-20 screen-center">
+    <section className="my-10 lg:my-20 screen-center" id="section-5">
       <div className={`${styles.background} flex p-5`}>
-        <div className="w-[55%]">
+        <div className="w-[65%]">
           <h1
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
@@ -26,7 +27,13 @@ const EnoughSaid = () => {
           </div>
         </div>
         <div className={` w-[45%] relative`}>
-          <Image alt="Mountains" src={image} placeholder="blur" quality={100} />
+          <Image
+            alt="Mountains"
+            src={image}
+            className="h-full"
+            placeholder="blur"
+            quality={100}
+          />
         </div>
       </div>
     </section>
