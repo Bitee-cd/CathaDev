@@ -17,6 +17,7 @@ const Contact = () => {
         />
         <section className=" screen-center my-10 lg:my-20">
           <h4 className="my-5 font-[700] uppercase">Get in touch</h4>
+
           <h1
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}

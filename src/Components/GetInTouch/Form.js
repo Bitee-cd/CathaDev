@@ -32,7 +32,6 @@ const Form = () => {
         }
       );
   };
-
   const submitHandler = (e) => {
     e.preventDefault();
     var formData = new FormData(e.target);
