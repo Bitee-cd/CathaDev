@@ -207,3 +207,7 @@ input:focus {
     box-shadow: 0 0 10px 0px (227, 227, 227, 0.28);
   }
 }
+
+.right {
+  transform-origin: center center;
+}

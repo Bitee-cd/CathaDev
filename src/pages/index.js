@@ -63,7 +63,6 @@ export default function Home() {
 
   return (
     <Layout title={title}>
-      {process.env.SERVICE_ID}
       <HeroSection />
       <AboutUs />
       <WhoWeAre />
