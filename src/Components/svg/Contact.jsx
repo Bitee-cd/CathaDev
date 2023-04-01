@@ -1,11 +1,18 @@
 import * as React from "react";
 import { useAppContext } from "../Context/AppContext";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+
 const ContactSvg = (props) => {
   const { darkMode } = useAppContext();
   const { theme } = useTheme();
   return (
-    <>
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 2 }}
+      className="w-full"
+    >
       <svg
         width="100%"
         height="auto"
@@ -42,7 +49,7 @@ const ContactSvg = (props) => {
           fill="#E3E3E3"
         />
       </svg>
-    </>
+    </motion.div>
   );
 };
 export default ContactSvg;

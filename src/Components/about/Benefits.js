@@ -36,7 +36,6 @@ const Benefits = ({ item, setImage }) => {
               initial={{ width: "0" }}
               animate={{ width: "100%" }}
               transition={{ duration: 2 }}
-              originX={1}
               className="absolute bottom-0 w-full h-[3px] bg-sec dark:bg-pri"
             ></motion.div>
           )}

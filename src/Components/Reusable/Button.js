@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 
 const Button = ({ title }) => {
   const [push, setPush] = useState(false);
-  const { darkMode } = useAppContext();
+  const { textLeave, textEnter } = useAppContext();
   const [hover, setHover] = useState(false);
 
   return (
@@ -13,6 +13,8 @@ const Button = ({ title }) => {
       <motion.div
         onHoverStart={() => setHover(true)}
         onHoverEnd={() => setHover(false)}
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
         className={`flex ${
           hover ? "bg-sec text-pri dark:bg-pri dark:text-sec" : ""
         }   items-center  relative h-[32px] transition-all w-[150px]  duration-700 rounded-[32px]`}

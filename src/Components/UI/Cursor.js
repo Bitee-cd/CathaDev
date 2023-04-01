@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CursorArrow from "./CursorArrow";
 import { motion } from "framer-motion";
 import { useAppContext } from "../Context/AppContext";
 

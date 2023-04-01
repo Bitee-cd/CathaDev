@@ -1,19 +1,28 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { useAppContext } from "../Context/AppContext";
+import { motion } from "framer-motion";
+import { Slide } from "react-awesome-reveal";
 
-const BackGroundLines = ({ position, top }) => {
+const BackGroundLines = ({ position, top, direction }) => {
   const { darkMode } = useAppContext();
   return (
-    <div className={`absolute ${top} w-screen -z-10`}>
+    <div className={`absolute ${top} w-screen -z-10 `}>
       <Lines />
       <MobileLines />
-      <div
-        className={`${styles.sphere} ${position}  dark:hidden  sphere_light -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
-      ></div>
-      <div
-        className={`${styles.sphere} ${position}  hidden dark:block  sphere_dark -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
-      ></div>
+      <Slide duration={2000}>
+        <motion.div
+          className={`${styles.sphere} ${position}  dark:hidden  sphere_light -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
+        ></motion.div>
+      </Slide>
+      <Slide duration={2000}>
+        <motion.div
+          // initial={{ x: x }}
+          // animate={{ x: 0 }}
+          // transition={{ duration: 2 }}
+          className={`${styles.sphere} ${position}  hidden dark:block  sphere_dark -z-0  absolute  -translate-y-1/2 text-black dark:text-pri`}
+        ></motion.div>
+      </Slide>
     </div>
   );
 };

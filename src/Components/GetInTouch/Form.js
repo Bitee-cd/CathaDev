@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useAppContext } from "../Context/AppContext";
 
+const data = {
+  SERVICE_ID: "service_ek0yd2i",
+  TEMPLATE_ID: "template_hshfbq4",
+  PUBLIC_KEY: "aPqlsJUPDU9KAqpLD",
+};
+
 const Form = () => {
   const { textEnter, textLeave } = useAppContext();
   const SendMessage = (params) => {
@@ -17,12 +23,7 @@ const Form = () => {
     const pubkey = process.env.PUBLIC_KEY;
 
     emailjs
-      .send(
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
-        templateParams,
-        process.env.PUBLIC_KEY
-      )
+      .send(data.SERVICE_ID, data.TEMPLATE_ID, templateParams, data.PUBLIC_KEY)
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
@@ -44,6 +45,7 @@ const Form = () => {
       <div className="my-2">
         <p className="label-text">What is Your Name</p>
         <input
+          required
           name="name"
           type="text"
           placeholder="Your Full Name *"
@@ -53,33 +55,18 @@ const Form = () => {
       <div className="my-2">
         <p className="label-text">What is Email Address</p>
         <input
+          required
           name="email"
           type="email"
           placeholder="Email Address *"
           className="input"
         />
       </div>
-      <div className="my-2">
-        <p className="label-text">Let us contact you</p>
-        <input
-          name="full_name"
-          type="text"
-          placeholder="Your Full Name *"
-          className="input"
-        />
-      </div>
-      <div className="my-2">
-        <p className="label-text">What is the name of your organization?</p>
-        <input
-          type="text"
-          placeholder="Your Organization name  *"
-          className="input"
-          name="organistaion"
-        />
-      </div>
+
       <div className="my-2">
         <p className="label-text">What is your budget like?</p>
         <input
+          required
           name="budget"
           type="text"
           placeholder="$1800-2200*"
@@ -97,21 +84,20 @@ const Form = () => {
           className="input2 "
         />
       </div>
-      <motion.div
+      {/* <motion.div
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
         className={`submit_btn origin-top-left mt-10 mx-auto bg-pri dark:bg-sec `}
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
-      >
-        <p
-          // onMouseEnter={textEnter}
-          // onMouseLeave={textLeave}
-          className="uppercase  text-black text-center dark:text-pri m-5"
-        >
-          submit
-        </p>
-      </motion.div>
+      > */}
+      <input
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
+        type="submit"
+        className="uppercase submit_btn origin-top-left mt-10 mx-auto bg-pri dark:bg-sec text-black text-center dark:text-pri m-5"
+      />
+      {/* </motion.div> */}
     </form>
   );
 };

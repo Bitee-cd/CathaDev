@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { useAppContext } from "../Context/AppContext";
 import BackGroundLines from "../Reusable/BackGroundLines";
+import { motion } from "framer-motion";
 
 const Items = () => {
   const { items } = services;
@@ -10,13 +11,20 @@ const Items = () => {
 
   return (
     <>
-      <BackGroundLines position="left-[15%]" top="top-[25%] translate-y-1/2" />
+      <BackGroundLines
+        position="left-[15%]"
+        top="top-[25%] translate-y-1/2"
+        x="500"
+      />
       <div
         className={`${sora.className} screen-center   md:grid-rows-8 mx-auto grid md:grid-cols-2 gap-10`}
       >
         {items.map((item) => (
-          <div
+          <motion.div
             key={item.id}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2, delay: item.id * 0.5 + 2 }}
             className={`${
               item.id % 2 !== 0
                 ? "md:ml-auto"
@@ -61,7 +69,7 @@ const Items = () => {
               {item.title}
             </h4>
             <h6 className="font-normal">{item.text}</h6>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>

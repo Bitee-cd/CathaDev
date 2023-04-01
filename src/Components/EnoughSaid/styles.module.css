@@ -8,5 +8,5 @@
   /* transform: rotate(180deg); */
 }
 .clip {
-  clip-path: polygon(40% 0, 100% 0%, 60% 100%, 0% 100%);
+  clip-path: polygon(30% 0, 100% 0%, 70% 100%, 0% 100%);
 }

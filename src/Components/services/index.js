@@ -10,7 +10,7 @@ const Services = () => {
   return (
     <Element name="services" className="element" id="section-4">
       <div className="relative">
-        <BackGroundLines position="right-[15%]" top="top-0" />
+        <BackGroundLines position="right-[15%]" top="top-0" direction="top" />
         <section className="screen-center my-20 zindex2">
           <h4 className="my-5 font-[700] uppercase">Services</h4>
           <h1
