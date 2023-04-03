@@ -37,11 +37,10 @@ export default function HeroSection() {
               </h1>
 
               <p className=" mt-3 lg:w-[80%] mb-10">
-                At CathaDev, we will create a wonderful digital experience for
-                your business as we work together to enhance your online
-                presence through quality responsive websites that will improve
-                user experience, boost branding and increase revenue with high
-                customer conversion rates and good SEO
+                Elevate your online presence with Cathadev web design agency. We
+                create stunning high quality websites that showcase your brand
+                and drive results for your business.
+                <br></br> <span className="mt-3"> Ready to get started?</span>
               </p>
             </Fade>
           </div>

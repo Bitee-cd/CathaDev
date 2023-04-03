@@ -40,10 +40,9 @@ function AboutUs() {
                   What Will You Benefit?
                 </h1>
                 <p className=" lg:w-[80%] ">
-                  We specialize in helping businesses navigate the ever-changing
-                  digital landscape and reach their target audience through a
-                  variety of channels so with Cathadev you get;
+                  IN TODAY’S DAY AND AGE EVERY BUSINESS NEEDS A WEBSITE!
                 </p>
+                <p className=" lg:w-[80%] ">With Cathadev you get;</p>
                 {/* </Fade> */}
                 <div className="lg:flex justify-between mt-5">
                   <div className="lg:w-[65%]">
